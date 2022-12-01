@@ -1,4 +1,4 @@
-const { screens } = require('tailwindcss/defaultTheme');
+const { fontFamily, screens } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -10,7 +10,11 @@ module.exports = {
 			xs: '475px',
 			...screens
 		},
-		extend: {}
+		extend: {
+			fontFamily: {
+				sans: ['Inter', ...fontFamily.sans]
+			}
+		}
 	},
 	plugins: []
 };
