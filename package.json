@@ -19,18 +19,44 @@
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
+		"autoprefixer": "^10.4.7",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"postcss": "^8.4.14",
+		"postcss-load-config": "^4.0.1",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
+		"prettier-plugin-tailwindcss": "^0.2.0",
 		"svelte": "^3.53.1",
 		"svelte-check": "^2.9.2",
 		"svelte-preprocess": "^4.10.7",
+		"tailwindcss": "^3.1.5",
 		"tslib": "^2.4.1",
 		"typescript": "^4.9.3",
 		"vite": "^3.2.4",
 		"vitest": "^0.25.3"
+	},
+	"prettier": {
+		"useTabs": true,
+		"singleQuote": true,
+		"trailingComma": "none",
+		"printWidth": 100,
+		"plugins": [
+			"prettier-plugin-svelte",
+			"prettier-plugin-tailwindcss"
+		],
+		"pluginSearchDirs": [
+			"."
+		],
+		"overrides": [
+			{
+				"files": "*.svelte",
+				"options": {
+					"parser": "svelte"
+				}
+			}
+		]
 	},
 	"type": "module"
 }
