@@ -1,6 +1,20 @@
-# create-svelte
+# Svelte Kit + TypeScript + Tailwind CSS starter template
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+
+This starter template comes with:
+
+- [Vite](https://vitejs.dev) for "Next Generation Frontend Tooling".
+- [Svelte](https://svelte.dev) for "cybernetically enhanced web apps".
+- [Svelte Kit](https://kit.svelte.dev) for "web development, streamlined".
+- [TypeScript](https://www.typescriptlang.org) for type checking.
+- [Tailwind CSS](https://tailwindcss.com) for rapid prototyping.
+- [Prettier](https://prettier.io) for code formatting + [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) for official class sorting.
+- [Eslint](https://eslint.org) for code linting.
+- [Playwright](https://playwright.dev) for browser testing.
+- [Vitest](https://vitest.dev/) for unit testing.
+- Inter variable font included with [optimizations](https://leerob.io/blog/fonts) to minimize layout shifts.
+- Sensible defaults in the `tailwind.config.js` to create a custom design system for your project.
 
 ## Creating a project
 
