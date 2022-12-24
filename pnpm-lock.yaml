@@ -24,6 +24,7 @@ specifiers:
   typescript: ^4.9.3
   vite: ^4.0.0
   vitest: ^0.25.3
+  zod: ^3.20.2
 
 devDependencies:
   '@playwright/test': 1.29.1
@@ -49,6 +50,7 @@ devDependencies:
   typescript: 4.9.4
   vite: 4.0.3
   vitest: 0.25.8
+  zod: 3.20.2
 
 packages:
 
@@ -2277,4 +2279,8 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: true
+
+  /zod/3.20.2:
+    resolution: {integrity: sha512-1MzNQdAvO+54H+EaK5YpyEy0T+Ejo/7YLHS93G3RnYWh5gaotGHwGeN/ZO687qEDU2y4CdStQYXVHIgrUl5UVQ==}
     dev: true
