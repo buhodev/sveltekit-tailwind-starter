@@ -50,3 +50,7 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## Credits
+
+Best practices for font optimization by Lee Robinson's [Web Fonts in 2021](https://leerob.io/blog/fonts) blog post.
