@@ -19,6 +19,7 @@ specifiers:
   svelte: ^3.54.0
   svelte-check: ^3.0.0
   svelte-french-toast: ^1.0.3
+  svelte-headlessui: ^0.0.14
   tailwindcss: ^3.1.5
   tslib: ^2.4.1
   typescript: ^4.9.3
@@ -48,6 +49,7 @@ devDependencies:
   prettier-plugin-tailwindcss: 0.2.1_prettier@2.8.1
   svelte: 3.55.0
   svelte-check: 3.0.0_7tgmgw23w4ankk7vtabgm5xtbu
+  svelte-headlessui: 0.0.14
   tailwindcss: 3.2.4_postcss@8.4.20
   tslib: 2.4.1
   typescript: 4.9.4
@@ -1907,6 +1909,12 @@ packages:
       - svelte
     dev: false
 
+  /svelte-headlessui/0.0.14:
+    resolution: {integrity: sha512-w2Sqj/xqmrUi5XtVXUeSh3lJUAUgpVSpA5ApnmLmFE+S16nk8XRsQof6Inj0Lrc+Qe91AnaDXGQxijuKZg4Vfg==}
+    dependencies:
+      svelte-transition: 0.0.7
+    dev: true
+
   /svelte-hmr/0.15.1_svelte@3.55.0:
     resolution: {integrity: sha512-BiKB4RZ8YSwRKCNVdNxK/GfY+r4Kjgp9jCLEy0DuqAKfmQtpL38cQK3afdpjw4sqSs4PLi3jIPJIFp259NkZtA==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -1964,6 +1972,10 @@ packages:
       strip-indent: 3.0.0
       svelte: 3.55.0
       typescript: 4.9.4
+    dev: true
+
+  /svelte-transition/0.0.7:
+    resolution: {integrity: sha512-YMbl+eIkzeYKBz6E/I8KI8RMezhqB38t2B/Mx8BotmtiN+5wnKath7CWDc+8U9zKGJ/iUYHmx4MwQjIzo05nVg==}
     dev: true
 
   /svelte-writable-derived/2.1.6_svelte@3.55.0:
