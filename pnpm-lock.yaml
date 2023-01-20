@@ -27,11 +27,13 @@ specifiers:
   vite: ^4.0.0
   vitest: ^0.25.3
   zod: ^3.20.2
+  zod-form-data: ^1.2.4
 
 dependencies:
   svelte-french-toast: 1.0.3_svelte@3.55.0
   svelte-headlessui: 0.0.14
   zod: 3.20.2
+  zod-form-data: 1.2.4_zod@3.20.2
 
 devDependencies:
   '@playwright/test': 1.29.1
@@ -2410,6 +2412,14 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zod-form-data/1.2.4_zod@3.20.2:
+    resolution: {integrity: sha512-mI/rgItfvYQpvzEqGuBda/nuTHrMNoFZJ5cpiGLC5O3ZaVwI0XVo3/yTY2RreVMu57wGcDrfQcTRe5aMq2ijYA==}
+    peerDependencies:
+      zod: ^3.11.x
+    dependencies:
+      zod: 3.20.2
+    dev: false
 
   /zod/3.20.2:
     resolution: {integrity: sha512-1MzNQdAvO+54H+EaK5YpyEy0T+Ejo/7YLHS93G3RnYWh5gaotGHwGeN/ZO687qEDU2y4CdStQYXVHIgrUl5UVQ==}
