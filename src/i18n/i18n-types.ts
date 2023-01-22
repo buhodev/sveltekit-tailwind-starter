@@ -15,10 +15,23 @@ export type Translations = RootTranslation
 
 type RootTranslation = {
 	/**
-	 * H​i​ ​{​n​a​m​e​}​!​ ​W​e​l​c​o​m​e​ ​t​o​ ​S​v​e​l​t​e​K​i​t
-	 * @param {string} name
+	 * W​e​l​c​o​m​e​ ​t​o​ ​S​v​e​l​t​e​K​i​t
 	 */
-	HI: RequiredParams<'name'>
+	HI: string
+	LOCALES: {
+		/**
+		 * C​h​a​n​g​e​ ​l​a​n​g​u​a​g​e
+		 */
+		description: string
+		/**
+		 * E​n​g​l​i​s​h
+		 */
+		en: string
+		/**
+		 * E​s​p​a​ñ​o​l
+		 */
+		es: string
+	}
 	/**
 	 * T​h​i​s​ ​l​o​g​ ​w​a​s​ ​c​a​l​l​e​d​ ​f​r​o​m​ ​'​{​f​i​l​e​N​a​m​e​}​'
 	 * @param {string} fileName
@@ -28,9 +41,23 @@ type RootTranslation = {
 
 export type TranslationFunctions = {
 	/**
-	 * Hi {name}! Welcome to SvelteKit
+	 * Welcome to SvelteKit
 	 */
-	HI: (arg: { name: string }) => LocalizedString
+	HI: () => LocalizedString
+	LOCALES: {
+		/**
+		 * Change language
+		 */
+		description: () => LocalizedString
+		/**
+		 * English
+		 */
+		en: () => LocalizedString
+		/**
+		 * Español
+		 */
+		es: () => LocalizedString
+	}
 	/**
 	 * This log was called from '{fileName}'
 	 */
