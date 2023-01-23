@@ -42,17 +42,40 @@
 
 <svelte:window on:popstate={handlePopStateEvent} />
 
-<ul class="flex space-x-2">
-	{#each locales as l}
-		<li>
-			<a
-				class:bg-blue-600={l === $locale}
-				class:text-white={l === $locale}
-				class="rounded bg-gray-100 px-2 py-1"
-				href={`${replaceLocaleInUrl($page.url, l)}`}
-			>
-				{$LL.LOCALES[l]()}
-			</a>
-		</li>
-	{/each}
-</ul>
+<noscript>
+	<style>
+		.language-toggle {
+			display: none;
+		}
+	</style>
+
+	<ul class="flex space-x-2">
+		{#each locales as l}
+			<li>
+				<a
+					class="rounded bg-neutral-100 px-2 py-1"
+					class:bg-blue-600={l === $locale}
+					class:text-white={l === $locale}
+					href={`${replaceLocaleInUrl($page.url, l)}`}
+				>
+					{$LL.LOCALES[l]()}
+				</a>
+			</li>
+		{/each}
+	</ul>
+</noscript>
+
+<div class="language-toggle w-24">
+	<label class="sr-only" for="change-language">{$LL.LOCALES.description}</label>
+	<select
+		bind:value
+		on:change={() => switchLocale(value)}
+		id="change-language"
+		name="change-language"
+		class="block w-full rounded-lg border-transparent bg-neutral-50 py-1 px-2 text-sm text-neutral-900 focus:border-indigo-500 focus:ring-indigo-500 dark:bg-neutral-900 dark:text-white dark:placeholder-neutral-400 dark:focus:ring-indigo-500"
+	>
+		{#each locales as l}
+			<option selected={l === $locale} value={l}>{$LL.LOCALES[l]()}</option>
+		{/each}
+	</select>
+</div>
