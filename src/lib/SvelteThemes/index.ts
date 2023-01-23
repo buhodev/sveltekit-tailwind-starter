@@ -1,3 +1,4 @@
+// copied from https://github.com/beynar/svelte-themes/blob/main/src/lib/index.ts
 import { writable } from 'svelte/store';
 
 export interface ThemeStore {

@@ -1,3 +1,4 @@
+<!-- copied from https://github.com/beynar/svelte-themes/blob/main/src/lib/SvelteTheme.svelte -->
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { colorSchemes, MEDIA } from './constants';

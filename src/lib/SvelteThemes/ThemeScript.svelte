@@ -1,3 +1,4 @@
+<!-- copied from https://github.com/beynar/svelte-themes/blob/main/src/lib/ThemeScript.svelte -->
 <script lang="ts">
 	import { MEDIA } from './constants';
 	export let forcedTheme: string;

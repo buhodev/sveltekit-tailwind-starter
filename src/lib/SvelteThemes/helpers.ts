@@ -1,3 +1,4 @@
+// copied from https://github.com/beynar/svelte-themes/blob/main/src/lib/helpers.ts
 import { MEDIA } from './constants';
 
 export const getTheme = (key: string, fallback?: string): string | undefined => {
