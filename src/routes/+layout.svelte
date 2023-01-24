@@ -5,6 +5,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import HeadHrefLangs from '$lib/components/HeadHrefLangs.svelte';
 	import type { LayoutData } from './$types';
+	import SvelteTheme from '$lib/SvelteThemes/SvelteTheme.svelte';
 	export let data: LayoutData;
 	// at the very top, set the locale before you access the store and before the actual rendering takes place
 	setLocale(data.locale);
@@ -19,3 +20,5 @@
 <Header />
 
 <slot />
+
+<SvelteTheme attribute="data-theme" />
