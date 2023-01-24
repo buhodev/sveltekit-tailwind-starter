@@ -46,8 +46,10 @@
 	{#each themes as theme}
 		<button
 			class="rounded border px-2 py-1"
-			formaction="/{$page.params.lang}?/setTheme&theme={theme}">{theme}</button
+			formaction="/{$page.params.lang}?/setTheme&theme={theme}&redirectTo={$page.url.pathname}"
 		>
+			{theme}
+		</button>
 	{/each}
 </form>
 
