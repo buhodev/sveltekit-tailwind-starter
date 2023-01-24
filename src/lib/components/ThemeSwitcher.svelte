@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { enhance, type SubmitFunction } from '$app/forms';
-	import themeStore, { setTheme } from '$lib/SvelteThemes/index';
+	import themeStore, { setTheme } from '$lib/components/SvelteThemes/index';
 	import { draw } from 'svelte/transition';
 	import { page } from '$app/stores';
 
