@@ -1,6 +1,18 @@
-<script>
+<script lang="ts">
+	import { enhance, type SubmitFunction } from '$app/forms';
 	import themeStore, { setTheme } from '$lib/SvelteThemes/index';
 	import { draw } from 'svelte/transition';
+	import { page } from '$app/stores';
+
+	const themes = ['dark', 'light'];
+
+	const submitUpdateTheme: SubmitFunction = ({ action }) => {
+		const theme = action.searchParams.get('theme');
+
+		if (theme) {
+			document.documentElement.setAttribute('data-theme', theme);
+		}
+	};
 
 	const toggleTheme = () => {
 		if ($themeStore.theme === 'light') {
@@ -18,6 +30,26 @@
 			'm8.7 5.531-.722-1.734M4.031 10.2l-1.734-.722m17.672.722 1.734-.722M15.3 5.531l.722-1.734M22.5 15h-21m18 3.75h-15M6.581 15a5.625 5.625 0 1 1 10.838 0'
 	};
 </script>
+
+<noscript>
+	<style>
+		.no-js {
+			display: flex;
+		}
+		.theme-toggle {
+			display: none;
+		}
+	</style>
+</noscript>
+
+<form method="POST" class="no-js hidden space-x-2" use:enhance={submitUpdateTheme}>
+	{#each themes as theme}
+		<button
+			class="rounded border px-2 py-1"
+			formaction="/{$page.params.lang}?/setTheme&theme={theme}">{theme}</button
+		>
+	{/each}
+</form>
 
 <button
 	on:click={toggleTheme}
