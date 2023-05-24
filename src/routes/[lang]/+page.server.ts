@@ -1,10 +1,5 @@
 import { redirect } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
 import type { Actions } from './$types';
-
-export const load = (async ({ locals: { LL } }) => {
-	console.info(LL.log({ fileName: '+page.server.ts' }));
-}) satisfies PageServerLoad;
 
 export const actions: Actions = {
 	setTheme: async ({ url, cookies, params }) => {

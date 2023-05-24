@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { locales, baseLocale } from '$i18n/i18n-util';
+	import { languages, referenceLanguage } from '@inlang/sdk-js';
 	import { page } from '$app/stores';
 	import { replaceLocaleInUrl } from '$lib/utils';
 </script>
 
-{#each locales as l}
-	<link rel="alternate" hreflang={l} href={`${replaceLocaleInUrl($page.url, l, true)}`} />
+{#each languages as lang}
+	<link rel="alternate" hreflang={lang} href={`${replaceLocaleInUrl($page.url, lang, true)}`} />
 {/each}
 <link
 	rel="alternate"
 	hreflang="x-default"
-	href={`${replaceLocaleInUrl($page.url, baseLocale, true)}`}
+	href={`${replaceLocaleInUrl($page.url, referenceLanguage, true)}`}
 />

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { locale } from '$i18n/i18n-svelte';
+	import { language } from '@inlang/sdk-js';
 	import LocaleSwitcher from '$lib/components/LocaleSwitcher.svelte';
 	import ThemeSwitcher from '$lib/components/ThemeSwitcher.svelte';
 </script>
 
 <header>
-	<a href="/{$locale}">
+	<a href="/{language}">
 		<h1>Home</h1>
 	</a>
 

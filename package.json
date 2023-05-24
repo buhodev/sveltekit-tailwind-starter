@@ -3,8 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "npm-run-all --parallel sveltekit typesafe-i18n",
-		"sveltekit": "vite dev",
+		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
 		"test": "playwright test",
@@ -12,10 +11,10 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write .",
-		"typesafe-i18n": "typesafe-i18n"
+		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@inlang/sdk-js": "^0.6.1",
 		"@playwright/test": "^1.34.0",
 		"@poppanator/sveltekit-svg": "^2.0.2",
 		"@sveltejs/adapter-auto": "^2.0.0",

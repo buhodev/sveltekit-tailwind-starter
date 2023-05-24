@@ -1,20 +1,4 @@
-import type { LayoutLoad } from './$types';
-import type { Locales } from '$i18n/i18n-types';
-import { loadLocaleAsync } from '$i18n/i18n-util.async';
-import LL, { setLocale } from '$i18n/i18n-svelte';
-import { get } from 'svelte/store';
-
-export const load = (async ({ data: { locale } }) => {
-	// load dictionary into memory
-	await loadLocaleAsync(locale);
-
-	// if you need to output a localized string in a `load` function,
-	// you always need to call `setLocale` right before you access the `LL` store
-	setLocale(locale);
-	// get the translation functions value from the store
-	const $LL = get(LL);
-	console.info($LL.log({ fileName: '+layout.ts' }));
-
-	// pass locale to the "rendering context"
-	return { locale };
-}) satisfies LayoutLoad<{ locale: Locales }>;
+/* This file was created by inlang.
+It is needed in order to circumvent a current limitation of SvelteKit. See https://github.com/inlang/inlang/issues/647
+You can remove this comment and modify the file as you like. We just need to make sure it exists.
+Please do not delete it (inlang will recreate it if needed). */

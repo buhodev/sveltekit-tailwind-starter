@@ -1,0 +1,8 @@
+{
+	"welcome": "Welcome to SvelteKit",
+	"locales": {
+		"description": "Change language",
+		"en": "English",
+		"es": "Español"
+	}
+}
