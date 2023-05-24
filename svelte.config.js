@@ -15,6 +15,13 @@ const config = {
 
 	kit: {
 		adapter: adapter()
+	},
+
+	vitePlugin: {
+		inspector: {
+			holdMode: true,
+			toggleKeyCombo: 'meta-shift'
+		}
 	}
 };
 
