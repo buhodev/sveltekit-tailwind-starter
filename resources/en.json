@@ -4,5 +4,13 @@
 		"description": "Change language",
 		"en": "English",
 		"es": "Español"
+	},
+	"themes": {
+		"dark": "Dark",
+		"light": "Light",
+		"description": {
+			"dark": "Update to dark theme",
+			"light": "Update to light theme"
+		}
 	}
 }

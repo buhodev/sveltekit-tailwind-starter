@@ -1,24 +1,18 @@
 <script lang="ts">
-	import { enhance, type SubmitFunction } from '$app/forms';
-	import themeStore, { setTheme } from '$lib/components/SvelteThemes/index';
+	import { enhance } from '$app/forms';
+	import { i } from '@inlang/sdk-js';
+	import themeStore from '$lib/components/SvelteThemes/index';
+	import { toggleTheme } from '$lib/utils/toggleTheme';
 	import { draw } from 'svelte/transition';
 	import { page } from '$app/stores';
 
 	const themes = ['dark', 'light'];
 
-	const submitUpdateTheme: SubmitFunction = ({ action }) => {
+	const submitUpdateTheme = ({ action }) => {
 		const theme = action.searchParams.get('theme');
 
 		if (theme) {
 			document.documentElement.setAttribute('data-theme', theme);
-		}
-	};
-
-	const toggleTheme = () => {
-		if ($themeStore.theme === 'light') {
-			setTheme('dark');
-		} else {
-			setTheme('light');
 		}
 	};
 
@@ -42,22 +36,47 @@
 	</style>
 </noscript>
 
-<form method="POST" class="no-js hidden space-x-2" use:enhance={submitUpdateTheme}>
+<!-- TODO: refactor to keep `redirectTo` and `message` in the url if user submits the form when JS is disabled -->
+<!-- TODO: refactor to wrap around the `noscript` tag and delete the enhance function -->
+<form
+	method="POST"
+	class="no-js hidden divide-x divide-neutral-300 overflow-hidden rounded-md border border-neutral-300 bg-white focus:z-10 dark:divide-neutral-700 dark:border-neutral-700 dark:bg-neutral-900"
+	use:enhance={submitUpdateTheme}
+>
 	{#each themes as theme}
 		<button
-			class="rounded border px-2 py-1"
+			class="p-1 font-medium text-neutral-600 hover:bg-neutral-50 hover:text-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-white dark:focus-visible:bg-neutral-700 dark:focus-visible:text-white"
 			formaction="/{$page.params.lang}?/setTheme&theme={theme}&redirectTo={$page.url.pathname}"
+			title={i(`themes.description.${theme}`)}
 		>
-			{theme}
+			<span class="sr-only">
+				{i(`themes.description.${theme}`)}
+			</span>
+
+			<svg
+				width="20"
+				height="20"
+				viewBox="0 0 24 24"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d={ICONS[theme]}
+					stroke="currentColor"
+					stroke-width="1.75"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
+			</svg>
 		</button>
 	{/each}
 </form>
 
 <button
 	on:click={toggleTheme}
-	class="theme-toggle rounded border border-neutral-200 bg-white p-1 text-neutral-900 hover:ring focus-visible:outline-none focus-visible:ring dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-100"
+	class="theme-toggle rounded-lg border border-neutral-300 bg-white p-1 text-neutral-700 hover:text-neutral-900 hover:ring focus-visible:outline-none focus-visible:ring dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100"
 >
-	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 		{#if $themeStore.theme === 'dark'}
 			<path
 				in:draw={{ duration: 300 }}
