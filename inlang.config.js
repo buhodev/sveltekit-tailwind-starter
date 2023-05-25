@@ -28,10 +28,7 @@ export async function defineConfig(env) {
 			standardLintRules(),
 			sdkPlugin({
 				languageNegotiation: {
-					strategies: [
-						{ type: 'url' },
-						{ type: 'accept-language-header' }
-					]
+					strategies: [{ type: 'url' }]
 				}
 			}),
 			ideExtensionPlugin()
