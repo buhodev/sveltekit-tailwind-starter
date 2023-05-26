@@ -1,5 +1,6 @@
 import { redirect } from '@sveltejs/kit';
 import type { Actions } from './$types';
+import { replaceLocaleInUrl } from '$lib/utils';
 
 export const actions: Actions = {
 	setTheme: async ({ url, cookies, params }) => {
@@ -14,5 +15,19 @@ export const actions: Actions = {
 		}
 
 		throw redirect(303, redirectTo ?? params.lang);
+	},
+
+	setLanguage: async ({ url, cookies, request }) => {
+		const { lang } = Object.fromEntries(await request.formData());
+		const origin = url.searchParams.get('origin') as string;
+
+		if (lang) {
+			cookies.set('lang', lang as string, {
+				path: '/',
+				maxAge: 60 * 60 * 24 * 365
+			});
+		}
+
+		throw redirect(303, replaceLocaleInUrl(new URL(origin), lang as string));
 	}
 };
