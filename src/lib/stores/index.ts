@@ -1,1 +1,3 @@
-// Here you can define your stores
+import { showConfetti } from '$stores/confetti';
+
+export { showConfetti };
