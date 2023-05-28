@@ -40,7 +40,7 @@
 <!-- TODO: refactor to wrap around the `noscript` tag and delete the enhance function -->
 <form
 	method="POST"
-	class="no-js w-min hidden divide-x divide-neutral-300 overflow-hidden rounded-md border border-neutral-300 bg-white focus:z-10 dark:divide-neutral-700 dark:border-neutral-700 dark:bg-neutral-900"
+	class="no-js hidden w-min divide-x divide-neutral-300 overflow-hidden rounded-md border border-neutral-300 bg-white focus:z-10 dark:divide-neutral-700 dark:border-neutral-700 dark:bg-neutral-900"
 	use:enhance={submitUpdateTheme}
 >
 	{#each themes as theme}
