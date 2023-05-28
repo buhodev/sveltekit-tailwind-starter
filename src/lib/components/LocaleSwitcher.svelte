@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 	import { i, language, languages, switchLanguage } from '@inlang/sdk-js';
 
-	import ArrowPathIcon from '$lib/icons/arrow-path.svg?component';
+	import ArrowPathIcon from '$icons/arrow-path.svg?component';
 
 	let lang = $page.params.lang;
 	let formElement: HTMLFormElement;

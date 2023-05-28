@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { i } from '@inlang/sdk-js';
-	import themeStore from '$lib/components/SvelteThemes/index';
-	import { toggleTheme } from '$lib/utils/toggleTheme';
-	import { draw } from 'svelte/transition';
 	import { page } from '$app/stores';
+	import { draw } from 'svelte/transition';
+	import { i } from '@inlang/sdk-js';
+	import themeStore from '$components/SvelteThemes/index';
+	import { toggleTheme } from '$utils';
 
 	const themes = ['dark', 'light'];
 

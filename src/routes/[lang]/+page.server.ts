@@ -1,8 +1,7 @@
 import { redirect } from '@sveltejs/kit';
-import type { Actions } from './$types';
-import { replaceLocaleInUrl } from '$lib/utils';
+import { replaceLocaleInUrl } from '$utils';
 
-export const actions: Actions = {
+export const actions = {
 	setTheme: async ({ url, cookies, params }) => {
 		const theme = url.searchParams.get('theme');
 		const redirectTo = url.searchParams.get('redirectTo');

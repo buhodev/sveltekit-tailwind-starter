@@ -1,7 +1,7 @@
 <script>
 	import { i } from '@inlang/sdk-js';
-	import HeadHrefLangs from '$lib/components/HeadHrefLangs.svelte';
-</script> 
+	import HeadHrefLangs from '$components/HeadHrefLangs.svelte';
+</script>
 
 <svelte:head>
 	<title>SvelteKit + TypeScript + TailwindCSS starter</title>
