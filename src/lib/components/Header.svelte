@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { language } from '@inlang/sdk-js';
+
 	import LocaleSwitcher from '$components/LocaleSwitcher.svelte';
 	import ThemeSwitcher from '$components/ThemeSwitcher.svelte';
 </script>
