@@ -14,7 +14,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@inlang/sdk-js": "^0.6.3",
+		"@inlang/sdk-js": "^0.11.0",
 		"@playwright/test": "^1.34.3",
 		"@poppanator/sveltekit-svg": "^3.0.1",
 		"@sveltejs/adapter-auto": "^2.1.0",
