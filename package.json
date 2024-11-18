@@ -41,7 +41,7 @@
 		"vitest": "^0.34.0"
 	},
 	"dependencies": {
-		"@neoconfetti/svelte": "^1.0.0"
+		"@neoconfetti/svelte": "^2.0.0"
 	},
 	"type": "module"
 }
