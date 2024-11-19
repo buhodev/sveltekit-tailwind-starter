@@ -1,40 +1,41 @@
+<div align="center">
+
+[![Svelte badge](https://img.shields.io/badge/Svelte-5.2.2-orange)](https://svelte.dev/)
+[![SvelteKit badge](https://img.shields.io/badge/SvelteKit-2.8.1-orange)](https://kit.svelte.dev/)
+[![TailwindCSS badge](https://img.shields.io/badge/TailwindCSS-3.4.15-teal)](https://tailwindcss.com/)
+[![TypeScript badge](https://img.shields.io/badge/TypeScript-5.6.3-blue)](https://www.typescriptlang.org/)
+[![Vitest badge](https://img.shields.io/badge/vitest-2.1.0-green)]()
+[![Playwright badge](https://img.shields.io/badge/Playwright-1.48.2-brightgreen)](https://playwright.dev/)
+[![Eslint badge](https://img.shields.io/badge/Eslint-9.15.0-blue)]()
+[![Prettier badge](https://img.shields.io/badge/Prettier-3.3.3-pink)]()
+[![Vite badge](https://img.shields.io/badge/Vite-5.4.11-blue)]()
+
+</div>
+
 # Svelte Kit + TypeScript + Tailwind CSS starter template
 
-Everything you need to build a full-featured Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-## What's inside
+## 🧰 What's inside
 
-This starter template comes with:
-
-### Bundler
-
-- [Vite](https://vitejs.dev): Next Generation Frontend Tooling.
+This minimal starter template comes with:
 
 ### JavaScript frameworks
 
-- [Svelte](https://svelte.dev): Cybernetically enhanced web apps.
-- [Svelte Kit](https://kit.svelte.dev): Web development, streamlined.
+- [Svelte 5](https://svelte.dev): Web development for the rest of us.
+- [SvelteKit](https://svelte.dev/docs/kit): Web development, streamlined.
 
 ### Components
 
-- [svelte-headlessui](https://captaincodeman.github.io/svelte-headlessui): Unstyled, fully accessible UI components for Svelte.
-- [svelte-transition](https://github.com/captaincodeman/svelte-transition): Svelte Transition Component.
-- [svelte-french-toast](https://svelte-french-toast.com/): Buttery smooth toast notifications.
-- [svelte-themes](https://github.com/beynar/svelte-themes/): Perfect SvelteKit dark mode in 2 lines of code. Support System preference and any other theme with no flashing.
-- [@poppanator/sveltekit-svg](https://github.com/poppa/sveltekit-svg): SvelteKit plugin that makes it possible to import SVG files as Svelte components, inline SVG code or urls.
+TODO
 
 ### Type checking
 
 - [TypeScript](https://www.typescriptlang.org): JavaScript with syntax for types.
 
-### Data validation
-
-- [zod](https://zod.dev/): TypeScript-first schema validation with static type inference.
-- [zod-form-data](https://www.npmjs.com/package/zod-form-data): Validation helpers for zod specifically for parsing FormData or URLSearchParams.
-
 ### CSS frameworks
 
-- [Tailwind CSS](https://tailwindcss.com): Rapidly build modern websites without ever leaving your HTML.
+- [TailwindCSS 4](https://tailwindcss.com): Rapidly build modern websites without ever leaving your HTML.
 - [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms): A plugin that provides a basic reset for form styles that makes form elements easy to override with utilities.
 - Sensible defaults in the `tailwind.config.js`.
 
@@ -46,7 +47,7 @@ This starter template comes with:
 
 ### i18n
 
-- [typesafe-i18n](https://github.com/ivanhofer/typesafe-i18n#get-started): A fully type-safe and lightweight internationalization library for all your TypeScript and JavaScript projects.
+- [@inlang/paraglide-sveltekit](https://github.com/opral/inlang-paraglide-js): Tree-shakable i18n library build on the inlang ecosystem.
 
 ### Testing
 
@@ -55,29 +56,29 @@ This starter template comes with:
 
 ### Fonts
 
-- [Inter variable](https://rsms.me/inter/): A typeface carefully crafted & designed for computer screens.
-- [Optimizations](https://leerob.io/blog/fonts) to minimize layout shifts.
+- [Inter variable](https://fontsource.org/fonts/inter/): A typeface carefully crafted & designed for computer screens.
 
 ### Utils
 
-- [svelte-local-storage-store](https://github.com/joshnuss/svelte-local-storage-store): A Svelte store that persists to localeStorage.
-- [date-fns](https://date-fns.org/): Modern JavaScript date utility library.
-- [date-fns-tz](https://github.com/marnusw/date-fns-tz): Complementary library for date-fns v2 adding IANA time zone support.
-- [@neoconfetti/svelte](https://github.com/puruvj/neoconfetti): Confetti in Svelte.
+- [mode-watcher](https://github.com/svecosystem/mode-watcher/): Simple light/dark mode management for SvelteKit apps.
 
-## Creating a project
+### Icons
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [@poppanator/sveltekit-svg](https://github.com/poppa/sveltekit-svg): SvelteKit plugin that makes it possible to import SVG files as Svelte components, inline SVG code or urls.
+- [unplugin-icons](https://github.com/unplugin/unplugin-icons): Access thousands of icons as components on-demand universally.
+
+## 📦 Installation
+
+Download the repository, open the folder and install the dependencies:
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+# download the project
+npx degit buhodev/sveltekit-tailwind-starter my-project
+cd my-project
+npm install # or pnpm install
 ```
 
-## Developing
+## 🛠️ Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
@@ -88,7 +89,7 @@ npm run dev
 npm run dev -- --open
 ```
 
-## Building
+## 🚀 Building
 
 To create a production version of your app:
 
@@ -98,12 +99,14 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
 
-## Credits
+## 🤝 Contributing
 
-Best practices for font optimization by Lee Robinson's [Web Fonts in 2021](https://leerob.io/blog/fonts) blog post.
+Contributions, issues and feature requests are welcome!
+<br />
+Feel free to check the [issues page](https://github.com/buhodev/sveltekit-tailwind-starter/issues).
 
-i18n logic copied from [typesafe-i18n-demo-sveltekit](https://github.com/ivanhofer/typesafe-i18n-demo-sveltekit).
+## License
 
-svelte-themes port of next-theme for SvelteKit by [beynar/svelte-themes](https://github.com/beynar/svelte-themes/).
+MIT

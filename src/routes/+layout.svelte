@@ -1,14 +1,15 @@
 <script lang="ts">
-	import '../app.postcss';
+	import '../app.css';
 
-	import Header from '$components/Header.svelte';
-	import SvelteTheme from '$components/SvelteThemes/SvelteTheme.svelte';
+	import { i18n } from '$lib/i18n';
+	import { ModeWatcher } from 'mode-watcher';
+	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 
-	export let data;
+	let { children } = $props();
 </script>
 
-<Header />
+<ModeWatcher />
 
-<slot />
-
-<SvelteTheme attribute="data-theme" />
+<ParaglideJS {i18n}>
+	{@render children()}
+</ParaglideJS>

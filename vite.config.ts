@@ -1,12 +1,15 @@
+import { defineConfig } from 'vitest/config';
+import { paraglide } from '@inlang/paraglide-sveltekit/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
 import svg from '@poppanator/sveltekit-svg';
-import inlangPlugin from '@inlang/sdk-js/adapter-sveltekit';
 
 export default defineConfig({
 	plugins: [
-		inlangPlugin(),
 		sveltekit(),
+		paraglide({
+			project: './project.inlang',
+			outdir: './src/lib/paraglide'
+		}),
 		svg({
 			includePaths: ['./src/lib/icons/'],
 			svgoOptions: {
@@ -20,6 +23,7 @@ export default defineConfig({
 			}
 		})
 	],
+
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	}

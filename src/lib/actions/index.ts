@@ -1,1 +1,1 @@
-// Here you can define your actions
+// place files you want to import through the `$actions` alias in this folder.
