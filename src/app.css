@@ -1,6 +1,16 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+/* @plugin '@tailwindcss/aspect-ratio'; */
+@plugin '@tailwindcss/container-queries';
+
+@theme {
+	--font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+	"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--breakpoint-xs: 475px;
+	--breakpoint-3xl: 1920px;
+}
 
 @layer base {
 	/* inter-latin-wght-normal */

@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitest/config';
-import { paraglide } from '@inlang/paraglide-sveltekit/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
+import { paraglide } from '@inlang/paraglide-sveltekit/vite';
 import svg from '@poppanator/sveltekit-svg';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
 	plugins: [
@@ -21,7 +22,8 @@ export default defineConfig({
 					}
 				]
 			}
-		})
+		}),
+		tailwindcss()
 	],
 
 	test: {
