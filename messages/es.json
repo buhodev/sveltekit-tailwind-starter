@@ -1,5 +1,6 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"quiet_chunky_jay_empower": "¡Bienvenido a {name}!",
-	"fit_candid_spider_adore": "Visita <a href=\"https://kit.svelte.dev\">kit.svelte.dev</a> para leer la documentación."
+	"fit_candid_spider_adore": "Visita <a href=\"https://kit.svelte.dev\">kit.svelte.dev</a> para leer la documentación.",
+	"house_patchy_flamingo_link": "Inicio"
 }

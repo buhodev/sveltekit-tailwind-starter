@@ -6,8 +6,8 @@
 @plugin '@tailwindcss/container-queries';
 
 @theme {
-	--font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-	"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	--breakpoint-xs: 475px;
 	--breakpoint-3xl: 1920px;
 }
