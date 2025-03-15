@@ -45,6 +45,6 @@
 	},
 	"dependencies": {
 		"@fontsource-variable/inter": "5.1.0",
-		"@inlang/paraglide-sveltekit": "0.11.5"
+		"@inlang/paraglide-sveltekit": "0.16.1"
 	}
 }
