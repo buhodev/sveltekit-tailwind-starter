@@ -14,6 +14,7 @@ Use this router before starting any task. Always also follow root `AGENTS.md`.
 | Branch review, PR review                       | `code_review.md`                    |
 | Creating branches/PRs, writing PR descriptions | `pr_workflow.md`                    |
 | Final QA before merge                          | `qa-checklist.md`                   |
+| First commit on a fresh fork                   | `after_fork.md`                     |
 
 If a task touches multiple areas, combine skills.
 

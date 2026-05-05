@@ -17,6 +17,7 @@ This folder contains rules and skills that AI agents (Claude, Codex, Cursor, etc
 | `code_review.md`      | Reviewing branches and PRs.                        |
 | `pr_workflow.md`      | Branch naming, PR description template.            |
 | `qa-checklist.md`     | Final QA before merge.                             |
+| `after_fork.md`       | Customization checklist for a fresh fork.          |
 
 ## Why these docs exist
 

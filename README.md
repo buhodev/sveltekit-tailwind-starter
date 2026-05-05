@@ -1,5 +1,7 @@
 # Svelte Art Starter
 
+> Это **стартер**. После форка под конкретный проект — пройдись по `agent/after_fork.md` и поменяй placeholder-данные (имя пакета, заголовки, `site.ts`, favicon).
+
 Тонкий стартер для **лендингов и многостраничных сайтов** на SvelteKit с полным пререндером.
 
 ## Стек
@@ -68,11 +70,15 @@ npm run preview
 
 ## Кастомизация под новый проект
 
-1. Поправить `src/lib/config/site.ts` (имя, URL, описание, OG-картинка, список маршрутов).
-2. Заменить контент `HeroSection` и `FeaturesSection` или удалить их и собрать свои секции по правилам `agent/section_build.md`.
-3. Положить favicon и OG-картинку в `static/`.
-4. Добавить роуты под нужные страницы.
-5. Прочитать `agent/*.md` перед тем, как пускать AI-агентов в репо.
+Полный чек-лист — в `agent/after_fork.md`. Если коротко:
+
+1. `package.json → name` — слаг проекта.
+2. `src/lib/config/site.ts` — имя, URL, описание, OG-картинка, список маршрутов для sitemap.
+3. `src/app.html → <html lang="...">` — локаль.
+4. `static/favicon.png` + `static/og-default.png` — реальные ассеты.
+5. README заголовок — название проекта.
+6. `HeroSection` / `FeaturesSection` / `/about` — заменить или удалить.
+7. Прочитать `agent/*.md` перед тем, как пускать AI-агентов в репо.
 
 ## Лицензия
 
