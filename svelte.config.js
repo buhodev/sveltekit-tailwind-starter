@@ -27,8 +27,7 @@ const config = {
 			$sections: 'src/lib/sections',
 			$icons: 'src/lib/icons',
 			$config: 'src/lib/config',
-			$utils: 'src/lib/utils',
-			$content: 'src/content'
+			$utils: 'src/lib/utils'
 		},
 		prerender: {
 			handleHttpError: 'warn',

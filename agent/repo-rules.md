@@ -21,10 +21,10 @@ src/
   lib/
     components/              Reusable UI (Header, Footer, Button, SEO, ...)
     sections/                Landing sections + neighboring data files
-    icons/                   Inline-SVG icons (imported as components)
+    icons/                   Inline-SVG icons (imported as components via `?component`)
     config/                  Site config (`site.ts`)
-    stores/                  Svelte stores (rare — prefer runes)
     utils/                   Pure helpers
+    images/                  (create per project) Source images for `enhanced:img`
 
   routes/                    File-based routing
     +layout.svelte
@@ -35,8 +35,6 @@ src/
     about/+page.svx          MDsveX content page
     ...
 
-  content/                   Optional MDsveX content (cases, blog) — set up per project.
-
 static/
   images/                    Photos, backgrounds, raster, decorative SVG.
   icons/                     UI/section icons (small).
@@ -44,6 +42,21 @@ static/
 
 agent/                       Agent docs (this folder).
 ```
+
+## Path aliases
+
+Configured in `svelte.config.js → kit.alias`:
+
+| Alias         | Resolves to          | Use for                                 |
+| ------------- | -------------------- | --------------------------------------- |
+| `$lib`        | `src/lib`            | SvelteKit default. Anything in `lib/`.  |
+| `$components` | `src/lib/components` | Reusable components.                    |
+| `$sections`   | `src/lib/sections`   | Landing sections.                       |
+| `$icons`      | `src/lib/icons`      | Inline SVG (imported via `?component`). |
+| `$config`     | `src/lib/config`     | `site.ts` and other build-time config.  |
+| `$utils`      | `src/lib/utils`      | Pure helpers.                           |
+
+If a folder is added (e.g. `src/lib/stores/` for runes-incompatible stores, `src/content/` for MDsveX collections), declare a matching alias in `svelte.config.js` and document it here in the same PR.
 
 ## Components
 
