@@ -4,15 +4,15 @@ This is a starter — placeholders need replacing on every fresh project. Run th
 
 ## 1. Rename the project
 
-| File | Field | Replace |
-|---|---|---|
-| `package.json` | `"name"` | Project slug, e.g. `acme-landing`. |
-| `README.md` | `# Svelte Art Starter` heading | Project title. |
-| `src/lib/config/site.ts` | `name`, `shortName`, `description`, `url`, `locale`, `ogImage`, `themeColor`, `author`, `twitter` | Real values for the new project. |
-| `src/lib/config/site.ts` | `routes` array | Real list of routes that should appear in `sitemap.xml`. |
-| `src/app.html` | `<html lang="...">` | Project locale (default `ru`). |
-| `static/favicon.png` | file | Real favicon. |
-| `static/og-default.png` | file (add it) | Default OG image referenced in `site.ts`. |
+| File                     | Field                                                                                             | Replace                                                  |
+| ------------------------ | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| `package.json`           | `"name"`                                                                                          | Project slug, e.g. `acme-landing`.                       |
+| `README.md`              | `# Svelte Art Starter` heading                                                                    | Project title.                                           |
+| `src/lib/config/site.ts` | `name`, `shortName`, `description`, `url`, `locale`, `ogImage`, `themeColor`, `author`, `twitter` | Real values for the new project.                         |
+| `src/lib/config/site.ts` | `routes` array                                                                                    | Real list of routes that should appear in `sitemap.xml`. |
+| `src/app.html`           | `<html lang="...">`                                                                               | Project locale (default `ru`).                           |
+| `static/favicon.png`     | file                                                                                              | Real favicon.                                            |
+| `static/og-default.png`  | file (add it)                                                                                     | Default OG image referenced in `site.ts`.                |
 
 ## 2. Decide what stays
 
