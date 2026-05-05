@@ -1,18 +1,30 @@
 <script lang="ts">
 	import '../app.css';
-
-	import { i18n } from '$lib/i18n';
 	import { ModeWatcher } from 'mode-watcher';
-	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
-	import Header from '$components/header.svelte';
+	import Header from '$components/Header.svelte';
+	import Footer from '$components/Footer.svelte';
+	import BackToTop from '$components/BackToTop.svelte';
+	import CookieBanner from '$components/CookieBanner.svelte';
+	import SEO from '$components/SEO.svelte';
+
+	const nav = [
+		{ label: 'Возможности', href: '/#features' },
+		{ label: 'О проекте', href: '/about' }
+	];
 
 	let { children } = $props();
 </script>
 
 <ModeWatcher />
+<SEO />
 
-<ParaglideJS {i18n}>
-	<Header />
+<div class="flex min-h-screen flex-col">
+	<Header {nav} />
+	<main class="flex-1">
+		{@render children()}
+	</main>
+	<Footer />
+</div>
 
-	{@render children()}
-</ParaglideJS>
+<BackToTop />
+<CookieBanner />

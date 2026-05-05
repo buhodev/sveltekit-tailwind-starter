@@ -1,0 +1,42 @@
+<script lang="ts">
+	import Container from '$components/Container.svelte';
+	import Section from '$components/Section.svelte';
+	import SEO from '$components/SEO.svelte';
+</script>
+
+<SEO title="О проекте" description="Шаблонный репозиторий для лендингов на SvelteKit + Svelte 5." />
+
+<Section spacing="lg">
+	<Container size="sm">
+
+# О проекте
+
+Это **тонкий стартер** для тиражируемых лендингов и многостраничных сайтов. Внутри:
+
+- SvelteKit + Svelte 5 + TypeScript
+- Tailwind 4 stable (CSS-first конфиг)
+- adapter-static + пререндер всех маршрутов
+- MDsveX для контентных страниц (этот файл — `.svx`)
+- enhanced-img для картинок
+- SEO-каркас: компонент `<SEO />`, `sitemap.xml`, `robots.txt`
+- Базовые компоненты: Header, Footer, Button, Container, Section, BackToTop, CookieBanner
+
+## Контентные страницы
+
+Этот файл — обычный markdown с возможностью вставлять Svelte-компоненты. Например, кнопка ниже — настоящий компонент:
+
+<div class="not-prose mt-6">
+  <a
+    href="/"
+    class="inline-flex h-11 items-center rounded-full bg-neutral-900 px-6 font-medium text-white hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+  >
+    На главную
+  </a>
+</div>
+
+## Конвенции
+
+Правила структуры и стиля — в папке `agent/*.md`. Их читают AI-агенты перед задачами и они же служат справкой для разработчика.
+
+	</Container>
+</Section>

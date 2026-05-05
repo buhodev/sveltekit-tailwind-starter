@@ -1,112 +1,79 @@
-<div align="center">
+# Svelte Art Starter
 
-[![Svelte badge](https://img.shields.io/badge/Svelte-5.2.2-orange)](https://svelte.dev/)
-[![SvelteKit badge](https://img.shields.io/badge/SvelteKit-2.8.1-orange)](https://kit.svelte.dev/)
-[![TailwindCSS badge](https://img.shields.io/badge/TailwindCSS-3.4.15-teal)](https://tailwindcss.com/)
-[![TypeScript badge](https://img.shields.io/badge/TypeScript-5.6.3-blue)](https://www.typescriptlang.org/)
-[![Vitest badge](https://img.shields.io/badge/vitest-2.1.0-green)]()
-[![Playwright badge](https://img.shields.io/badge/Playwright-1.48.2-brightgreen)](https://playwright.dev/)
-[![Eslint badge](https://img.shields.io/badge/Eslint-9.15.0-blue)]()
-[![Prettier badge](https://img.shields.io/badge/Prettier-3.3.3-pink)]()
-[![Vite badge](https://img.shields.io/badge/Vite-5.4.11-blue)]()
+Тонкий стартер для **лендингов и многостраничных сайтов** на SvelteKit с полным пререндером.
 
-</div>
+## Стек
 
-# Svelte Kit + TypeScript + Tailwind CSS starter template
+- **SvelteKit 2** + **Svelte 5** (runes)
+- **TypeScript** (strict)
+- **Tailwind 4** stable (CSS-first конфиг через `@theme` / `@plugin`)
+- **MDsveX** для контентных страниц (`.svx`, `.md`)
+- **adapter-static** + `prerender = true` в корневом `+layout.ts`
+- **enhanced-img** для оптимизации картинок
+- **mode-watcher** для light/dark
+- ESLint 9, Prettier, Vitest, Playwright
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## Что внутри
 
-## 🧰 What's inside
-
-This minimal starter template comes with:
-
-### JavaScript frameworks
-
-- [Svelte 5](https://svelte.dev): Web development for the rest of us.
-- [SvelteKit](https://svelte.dev/docs/kit): Web development, streamlined.
-
-### Components
-
-TODO
-
-### Type checking
-
-- [TypeScript](https://www.typescriptlang.org): JavaScript with syntax for types.
-
-### CSS frameworks
-
-- [TailwindCSS 4](https://tailwindcss.com): Rapidly build modern websites without ever leaving your HTML.
-- [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms): A plugin that provides a basic reset for form styles that makes form elements easy to override with utilities.
-- Sensible defaults in the `tailwind.config.js`.
-
-### Formatting & Linting
-
-- [Prettier](https://prettier.io): An opinionated code formatter.
-- [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss): Prettier plugin for Tailwind CSS that automatically sorts classes based on the official recommended class order.
-- [Eslint](https://eslint.org): Find and fix problems in your JavaScript code.
-
-### i18n
-
-- [@inlang/paraglide-sveltekit](https://github.com/opral/inlang-paraglide-js): Tree-shakable i18n library build on the inlang ecosystem.
-
-### Testing
-
-- [Playwright](https://playwright.dev): Fast and reliable end-to-end testing for modern web apps.
-- [Vitest](https://vitest.dev/): Blazing Fast Unit Test Framework.
-
-### Fonts
-
-- [Inter variable](https://fontsource.org/fonts/inter/): A typeface carefully crafted & designed for computer screens.
-
-### Utils
-
-- [mode-watcher](https://github.com/svecosystem/mode-watcher/): Simple light/dark mode management for SvelteKit apps.
-
-### Icons
-
-- [@poppanator/sveltekit-svg](https://github.com/poppa/sveltekit-svg): SvelteKit plugin that makes it possible to import SVG files as Svelte components, inline SVG code or urls.
-- [unplugin-icons](https://github.com/unplugin/unplugin-icons): Access thousands of icons as components on-demand universally.
-
-## 📦 Installation
-
-Download the repository, open the folder and install the dependencies:
-
-```bash
-# download the project
-npx degit buhodev/sveltekit-tailwind-starter my-project
-cd my-project
-npm install # or pnpm install
+```text
+src/
+  app.css              Tailwind + @theme + @plugin
+  app.html             HTML shell
+  lib/
+    components/        Header, Footer, Button, Container, Section, SEO, BackToTop, CookieBanner
+    sections/          HeroSection + hero.ts, FeaturesSection + features.ts (пары section + data)
+    icons/             Inline SVG (импорт через `?component`)
+    config/            site.ts — мета-данные сайта и список маршрутов для sitemap
+  routes/
+    +layout.svelte
+    +layout.ts         (prerender = true)
+    +page.svelte       Лендинг
+    sitemap.xml/+server.ts
+    robots.txt/+server.ts
+    about/+page.svx    Пример MDsveX-страницы
+static/
+  images/, icons/      Плоская структура, naming `{section}-{type}-{name}.{ext}`
+agent/                 Правила для AI-агентов и человека-разработчика
 ```
 
-## 🛠️ Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Запуск
 
 ```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## 🚀 Building
-
-To create a production version of your app:
+## Сборка
 
 ```bash
 npm run build
+npm run preview
 ```
 
-You can preview the production build with `npm run preview`.
+`npm run build` запускает `vite build`, который пререндерит все маршруты в `build/`. Полученную папку можно деплоить на любой статический хостинг (Vercel, Netlify, Cloudflare Pages, Timeweb, S3+CDN).
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Скрипты
 
-## 🤝 Contributing
+| Скрипт              | Что делает                            |
+| ------------------- | ------------------------------------- |
+| `npm run dev`       | Vite dev server.                      |
+| `npm run build`     | Production-сборка с пререндером.      |
+| `npm run preview`   | Локальный просмотр production-сборки. |
+| `npm run check`     | svelte-check + типы.                  |
+| `npm run lint`      | Prettier + ESLint.                    |
+| `npm run format`    | Prettier write.                       |
+| `npm run test:unit` | Vitest.                               |
+| `npm run test:e2e`  | Playwright.                           |
+| `npm run test`      | Unit + e2e.                           |
 
-Contributions, issues and feature requests are welcome!
-<br />
-Feel free to check the [issues page](https://github.com/buhodev/sveltekit-tailwind-starter/issues).
+## Кастомизация под новый проект
 
-## License
+1. Поправить `src/lib/config/site.ts` (имя, URL, описание, OG-картинка, список маршрутов).
+2. Заменить контент `HeroSection` и `FeaturesSection` или удалить их и собрать свои секции по правилам `agent/section_build.md`.
+3. Положить favicon и OG-картинку в `static/`.
+4. Добавить роуты под нужные страницы.
+5. Прочитать `agent/*.md` перед тем, как пускать AI-агентов в репо.
 
-MIT
+## Лицензия
+
+MIT.
