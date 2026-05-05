@@ -1,16 +1,14 @@
 import { defineConfig } from 'vitest/config';
 import { sveltekit } from '@sveltejs/kit/vite';
-import { paraglide } from '@inlang/paraglide-sveltekit/vite';
+import { enhancedImages } from '@sveltejs/enhanced-img';
 import svg from '@poppanator/sveltekit-svg';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
 	plugins: [
+		tailwindcss(),
+		enhancedImages(),
 		sveltekit(),
-		paraglide({
-			project: './project.inlang',
-			outdir: './src/lib/paraglide'
-		}),
 		svg({
 			includePaths: ['./src/lib/icons/'],
 			svgoOptions: {
@@ -22,8 +20,7 @@ export default defineConfig({
 					}
 				]
 			}
-		}),
-		tailwindcss()
+		})
 	],
 
 	test: {

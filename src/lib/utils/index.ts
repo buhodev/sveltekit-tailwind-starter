@@ -1,4 +1,2 @@
-import { replaceLocaleInUrl } from '$utils/replaceLocaleInUrl';
-import { toggleTheme } from '$utils/toggleTheme';
-
-export { replaceLocaleInUrl, toggleTheme };
+// place utils you want to import through the `$utils` alias in this folder.
+export {};
